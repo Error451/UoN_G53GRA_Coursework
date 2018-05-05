@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0DAB99C0-B8F4-4612-B844-C8D7511DF515}</ProjectGuid>
+    <RootNamespace>GLFWFramework</RootNamespace>
+    <ProjectName>Framework</ProjectName>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir)Include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Libs;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>./Code; ./Code/Objects; ./Framework; ./Framework/Engine; ./Framework/Interface; ./Framework/Utility</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_MBCS;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32sd.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Code\MyScene.cpp" />
+    <ClCompile Include="Code\MyTextureScene.cpp" />
+    <ClCompile Include="Code\Objects\Cube.cpp" />
+    <ClCompile Include="Code\Objects\MyCube.cpp" />
+    <ClCompile Include="Code\Objects\MyLight.cpp" />
+    <ClCompile Include="Code\Objects\CubeMap.cpp" />
+    <ClCompile Include="Framework\Engine\InputHandler.cpp" />
+    <ClCompile Include="Framework\Engine\Scene.cpp" />
+    <ClCompile Include="Framework\Engine\Engine.cpp" />
+    <ClCompile Include="Code\main.cpp" />
+    <ClCompile Include="Framework\Utility\Camera.cpp" />
+    <ClCompile Include="Framework\Utility\Shader.cpp" />
+    <ClCompile Include="Framework\Utility\stb_image.cpp" />
+    <ClCompile Include="Framework\Utility\Texture.cpp" />
+    <ClCompile Include="Code\Objects\WarpParticles.cpp" />
+    <ClCompile Include="Code\Objects\Mesh.cpp" />
+    <ClCompile Include="Code\Objects\Model.cpp" />
+    <ClCompile Include="Code\Objects\MyAlienCube.cpp" />
+    <ClCompile Include="Code\MyShadowScene.cpp" />
+    <ClCompile Include="Code\Objects\MyFloor.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Code\MyScene.h" />
+    <ClInclude Include="Code\MyTextureScene.h" />
+    <ClInclude Include="Code\Objects\Cube.h" />
+    <ClInclude Include="Code\Objects\CubeMap.h" />
+    <ClInclude Include="Code\Header.h" />
+    <ClInclude Include="Code\Objects\SimpleObjects.h" />
+    <ClInclude Include="Framework\Engine\InputHandler.h" />
+    <ClInclude Include="Framework\Interface\DisplayableObject.h" />
+    <ClInclude Include="Framework\Engine\Engine.h" />
+    <ClInclude Include="Framework\Interface\Input.h" />
+    <ClInclude Include="Framework\Engine\Scene.h" />
+    <ClInclude Include="Framework\Utility\Camera.h" />
+    <ClInclude Include="Framework\Utility\Shader.h" />
+    <ClInclude Include="Framework\Utility\stb_image.h" />
+    <ClInclude Include="Framework\Utility\Texture.h" />
+    <ClInclude Include="Code\Objects\MyCube.h" />
+    <ClInclude Include="Code\Objects\WarpParticles.h" />
+    <ClInclude Include="Code\Objects\MyLight.h" />
+    <ClInclude Include="Code\Objects\Mesh.h" />
+    <ClInclude Include="Code\Objects\Model.h" />
+    <ClInclude Include="Code\Objects\MyAlienCube.h" />
+    <ClInclude Include="Code\MyShadowScene.h" />
+    <ClInclude Include="Code\Objects\MyFloor.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Textures\5dim_bk.tga" />
+    <Image Include="Textures\5dim_dn.tga" />
+    <Image Include="Textures\5dim_ft.tga" />
+    <Image Include="Textures\5dim_lf.tga" />
+    <Image Include="Textures\5dim_rt.tga" />
+    <Image Include="Textures\5dim_up.tga" />
+    <Image Include="Textures\backtron.jpg" />
+    <Image Include="Textures\downtron.jpg" />
+    <Image Include="Textures\fronttron.jpg" />
+    <Image Include="Textures\lefttron.jpg" />
+    <Image Include="Textures\righttron.jpg" />
+    <Image Include="Textures\sample.png" />
+    <Image Include="Textures\Scifi_Hex_Wall_diffuse.jpg" />
+    <Image Include="Textures\Scifi_Hex_Wall_specular.jpg" />
+    <Image Include="Textures\sky2.jpg" />
+    <Image Include="Textures\sky2.png" />
+    <Image Include="Textures\skybox.png" />
+    <Image Include="Textures\stormydays_bk.tga" />
+    <Image Include="Textures\stormydays_dn.tga" />
+    <Image Include="Textures\stormydays_ft.tga" />
+    <Image Include="Textures\stormydays_lf.tga" />
+    <Image Include="Textures\stormydays_rt.tga" />
+    <Image Include="Textures\stormydays_up.tga" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Code\Shaders\addbloom.frag" />
+    <None Include="Code\Shaders\addbloom.vert" />
+    <None Include="Code\Shaders\alienrenderer.frag" />
+    <None Include="Code\Shaders\cube.frag" />
+    <None Include="Code\Shaders\cube.vert" />
+    <None Include="Code\Shaders\depthMapDebug.fs.glsl" />
+    <None Include="Code\Shaders\depthMapDebug.vs.glsl" />
+    <None Include="Code\Shaders\depthrenderer.fs.glsl" />
+    <None Include="Code\Shaders\depthrenderer.vs.glsl" />
+    <None Include="Code\Shaders\gaussian.frag" />
+    <None Include="Code\Shaders\gaussian.vert" />
+    <None Include="Code\Shaders\generalrenderer.frag" />
+    <None Include="Code\Shaders\generalrenderer.vert" />
+    <None Include="Code\Shaders\lamp.frag" />
+    <None Include="Code\Shaders\lamp.vert" />
+    <None Include="Code\Shaders\modelrenderer.frag" />
+    <None Include="Code\Shaders\shadowedrenderer.fs.glsl" />
+    <None Include="Code\Shaders\shadowedrenderer.vs.glsl" />
+    <None Include="Code\Shaders\skybox.frag" />
+    <None Include="Code\Shaders\skybox.vert" />
+    <None Include="Code\Shaders\texturedrenderer.frag" />
+    <None Include="Code\Shaders\texturedrenderer.vert" />
+    <None Include="Code\Shaders\texturetestrenderer.fs.glsl" />
+    <None Include="Code\Shaders\texturetestrenderer.vs.glsl" />
+    <None Include="Code\Shaders\warpinit.frag" />
+    <None Include="Code\Shaders\warpinit.vert" />
+    <None Include="Code\Shaders\warprenderer.frag" />
+    <None Include="Code\Shaders\warprenderer.vert" />
+    <None Include="Code\Shaders\warpupdate.frag" />
+    <None Include="Code\Shaders\warpupdate.vert" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
